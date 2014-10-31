@@ -60,6 +60,7 @@
         android:layout_below="@+id/password"
         android:layout_centerHorizontal="true"
         android:ems="10"
+        android:inputType="textPassword"
         android:hint="Confirm Password"/>
 
     <Button

@@ -73,7 +73,7 @@ public class SignupActivity extends ActionBarActivity {
 						
 						@Override
 						public void done(ParseException e) {
-
+							setProgressBarIndeterminate(false);
 							if(e == null){
 								Intent intent = new Intent(SignupActivity.this, MainActivity.class);
 								intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
