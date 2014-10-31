@@ -30,14 +30,17 @@ public class SignupActivity extends ActionBarActivity {
 		mPassword = (EditText) findViewById(R.id.password);
 		mSignup = (Button) findViewById(R.id.signup_button);
 		
-		final String username = mName.getText().toString().trim();
-		final String email = mEmail.getText().toString().trim();
-		final String password = mPassword.getText().toString().trim();
+		
 		
 		mSignup.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
+				
+				final String username = mName.getText().toString().trim();
+				final String email = mEmail.getText().toString().trim();
+				final String password = mPassword.getText().toString().trim();
+				
 				if(username.isEmpty() || email.isEmpty() || password.isEmpty()){
 					AlertDialog.Builder builder = new AlertDialog.Builder(SignupActivity.this);
 					builder.setMessage("Item missing in Signup Fields")
