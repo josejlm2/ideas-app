@@ -14,7 +14,7 @@ import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
 public class SignupActivity extends ActionBarActivity {
-	EditText mName, mUsername, mEmail, mPassword;
+	EditText mName, mUsername, mEmail, mPassword, mPasswordConfirm;
 	Button mSignup, mCancel;
 	
 	
@@ -28,6 +28,7 @@ public class SignupActivity extends ActionBarActivity {
 		mUsername = (EditText) findViewById(R.id.username);
 		mEmail = (EditText) findViewById(R.id.email);
 		mPassword = (EditText) findViewById(R.id.password);
+		mPasswordConfirm = (EditText) findViewById(R.id.confirm_password);
 		mSignup = (Button) findViewById(R.id.signup_button);
 		
 		
@@ -40,6 +41,9 @@ public class SignupActivity extends ActionBarActivity {
 				final String username = mName.getText().toString().trim();
 				final String email = mEmail.getText().toString().trim();
 				final String password = mPassword.getText().toString().trim();
+				final String confirmedPassword = mPasswordConfirm.getText().toString().trim();
+				
+				
 				
 				if(username.isEmpty() || email.isEmpty() || password.isEmpty()){
 					AlertDialog.Builder builder = new AlertDialog.Builder(SignupActivity.this);
@@ -48,6 +52,14 @@ public class SignupActivity extends ActionBarActivity {
 						.setTitle("Error Message");
 					AlertDialog dialog = builder.create();
 					dialog.show();					
+				}
+				else if(!confirmPass(password, confirmedPassword)){
+					AlertDialog.Builder builder = new AlertDialog.Builder(SignupActivity.this);
+					builder.setMessage("Passwords do not match")
+						.setPositiveButton("Ok", null)
+						.setTitle("Error Message");
+					AlertDialog dialog = builder.create();
+					dialog.show();
 				}
 				else{
 					
@@ -86,6 +98,12 @@ public class SignupActivity extends ActionBarActivity {
 		});
 		
 		
+	}
+	public boolean confirmPass(String password, String passwordConfirm){
+		if(password.equals(passwordConfirm)){
+			return true;
+		}
+		else return false;
 	}
 
 	
