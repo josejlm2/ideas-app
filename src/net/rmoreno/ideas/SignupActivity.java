@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
@@ -39,10 +40,11 @@ public class SignupActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View v) {
 				
-				final String username = mName.getText().toString().trim();
+				final String username = mUsername.getText().toString().trim();
 				final String email = mEmail.getText().toString().trim();
 				final String password = mPassword.getText().toString().trim();
 				final String confirmedPassword = mPasswordConfirm.getText().toString().trim();
+				final String name = mName.getText().toString().trim();
 				
 				
 				
@@ -64,12 +66,15 @@ public class SignupActivity extends ActionBarActivity {
 				}
 				else{
 					
-					setProgressBarIndeterminateVisibility(true);
+					
 					
 					ParseUser user = new ParseUser();
 					user.setUsername(username);
 					user.setPassword(password);
 					user.setEmail(email);
+					user.put("Name", name);
+					
+					setProgressBarIndeterminateVisibility(true);
 					user.signUpInBackground(new SignUpCallback() {
 						
 						@Override

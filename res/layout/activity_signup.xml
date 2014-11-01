@@ -17,7 +17,6 @@
         android:layout_marginTop="103dp"
         android:hint="Name"
         android:ems="10"
-        android:nextFocusDown="@+id/username" 
         android:imeOptions="actionNext">
 
         <requestFocus />
