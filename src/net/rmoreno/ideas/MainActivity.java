@@ -3,6 +3,7 @@ package net.rmoreno.ideas;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -20,6 +21,8 @@ public class MainActivity extends ActionBarActivity {
 		if(currentUser == null){
 			Intent intent = new Intent(MainActivity.this, LoginActivity.class);
 			startActivity(intent);
+		}else {
+			Log.i("USERNAME", currentUser.getUsername());
 		}
 	}
 
@@ -36,9 +39,17 @@ public class MainActivity extends ActionBarActivity {
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
+		switch(id){
+		case R.id.action_settings:
 			return true;
+		
+		case R.id.logout:
+			ParseUser.logOut();
+			Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+			startActivity(intent);
+			break;
 		}
+		
 		return super.onOptionsItemSelected(item);
 	}
 }

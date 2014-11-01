@@ -1,7 +1,6 @@
 package net.rmoreno.ideas;
 
 import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -9,6 +8,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.parse.LogInCallback;
 import com.parse.ParseException;
@@ -18,6 +18,7 @@ public class LoginActivity extends ActionBarActivity {
 	
 	EditText mUsername, mPassword;
 	Button mLogin;
+	TextView mSignup;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -27,11 +28,21 @@ public class LoginActivity extends ActionBarActivity {
 		mUsername = (EditText) findViewById(R.id.username);
 		mPassword = (EditText) findViewById(R.id.password);
 		mLogin = (Button) findViewById(R.id.sign_in);
+		mSignup = (TextView) findViewById(R.id.sign_up);
 		
+		mSignup.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+				startActivity(intent);
+				
+			}
+		});
 		mLogin.setOnClickListener(new View.OnClickListener() {
 		
-		String username = mUsername.getText().toString().trim();
-		String password = mPassword.getText().toString().trim();
+			String username = mUsername.getText().toString().trim();
+			String password = mPassword.getText().toString().trim();
 		
 			@Override
 			public void onClick(View v) {
@@ -59,7 +70,9 @@ public class LoginActivity extends ActionBarActivity {
 				
 			}
 		});
+		
 	}
+	
 
 	
 }

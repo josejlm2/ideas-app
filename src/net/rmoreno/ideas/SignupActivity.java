@@ -24,6 +24,7 @@ public class SignupActivity extends ActionBarActivity {
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.activity_signup);
 		
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 		mName = (EditText) findViewById(R.id.name);
 		mUsername = (EditText) findViewById(R.id.username);
 		mEmail = (EditText) findViewById(R.id.email);

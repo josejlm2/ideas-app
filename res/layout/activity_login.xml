@@ -14,7 +14,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
       	android:layout_centerHorizontal="true"
-        android:ems="10" >
+        android:ems="10" 
+        android:hint="username"
+        android:imeOptions="actionNext">
 
         <requestFocus />
     </EditText>
@@ -26,7 +28,9 @@
         android:layout_below="@+id/username"
         android:layout_centerHorizontal="true"
         android:inputType="textPassword"
-        android:ems="10" />
+        android:ems="10"
+        android:hint="password"
+        android:imeOptions="actionDone" />
 
     <Button
         android:id="@+id/sign_in"
@@ -35,5 +39,14 @@
         android:layout_below="@+id/password"
         android:layout_centerHorizontal="true"
         android:text="Login" />
+
+    <TextView
+        android:id="@+id/sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/username"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:text="Sign Up" />
 
 </RelativeLayout>
