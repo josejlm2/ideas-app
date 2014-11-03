@@ -16,6 +16,7 @@
       	android:layout_centerHorizontal="true"
         android:ems="10" 
         android:hint="username"
+        android:singleLine="true"
         android:imeOptions="actionNext">
 
         <requestFocus />
@@ -30,6 +31,7 @@
         android:inputType="textPassword"
         android:ems="10"
         android:hint="password"
+        android:singleLine="true"
         android:imeOptions="actionDone" />
 
     <Button

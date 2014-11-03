@@ -17,6 +17,7 @@
         android:layout_marginTop="103dp"
         android:hint="Name"
         android:ems="10"
+        android:singleLine="true"
         android:imeOptions="actionNext">
 
         <requestFocus />
@@ -30,7 +31,8 @@
         android:layout_centerHorizontal="true"
         android:hint="Username"
         android:ems="10"
-        android:imeOptions="actionNext" />
+        android:imeOptions="actionNext" 
+        android:singleLine="true"/>
 	
     <EditText
         android:id="@+id/email"
@@ -40,7 +42,8 @@
       	android:layout_centerHorizontal="true"
       	android:ems="10"
       	android:hint="Email"
-      	android:imeOptions="actionNext"/>
+      	android:imeOptions="actionNext"
+      	android:singleLine="true"/>
     
     <EditText
         android:id="@+id/password"
@@ -50,8 +53,9 @@
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:hint="Password"
-        android:inputType="textPassword" 
+        android:inputType="textPassword"
         android:imeOptions="actionNext"
+        android:singleLine="true"
         />
     <EditText 
         android:id="@+id/confirm_password"
@@ -62,6 +66,7 @@
         android:ems="10"
         android:inputType="textPassword"
         android:hint="Confirm Password"
+        android:singleLine="true"
         android:imeOptions="actionDone"/>
 
     <Button
