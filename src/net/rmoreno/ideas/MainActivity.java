@@ -50,6 +50,6 @@ public class MainActivity extends ActionBarActivity {
 			break;
 		}
 		
-		return super.onOptionsItemSelected(item);
+		return super.onOptionsItemSelected;
 	}
 }
