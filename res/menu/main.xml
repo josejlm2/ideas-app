@@ -9,5 +9,6 @@
         android:title="@string/action_settings"
         app:showAsAction="never"/>
     <item android:id="@+id/logout" android:title="Logout"></item>
+    <item android:id="@+id/add_idea" android:title="Add"></item>
 
 </menu>

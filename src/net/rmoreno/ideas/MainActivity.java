@@ -43,11 +43,17 @@ public class MainActivity extends ActionBarActivity {
 		case R.id.action_settings:
 			return true;
 		
+		case R.id.add_idea:
+			Intent add = new Intent(MainActivity.this, AddIdeaActivity.class);
+			startActivity(add);
+			break;
+			
 		case R.id.logout:
 			ParseUser.logOut();
-			Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-			startActivity(intent);
+			Intent logout = new Intent(MainActivity.this, LoginActivity.class);
+			startActivity(logout);
 			break;
+			
 		}
 		
 		return super.onOptionsItemSelected(item);
