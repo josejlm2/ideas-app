@@ -19,7 +19,8 @@
         android:imeOptions="actionNext"
         android:singleLine="true" >
 
-        <requestFocus />
+        <requestFocus android:layout_width="wrap_content" />
+
     </EditText>
 
     <EditText
@@ -32,12 +33,14 @@
         android:imeOptions="actionDone"
         android:inputType="textMultiLine" 
         android:hint="Description"/>
-	
+
     <Button
         android:id="@+id/add"
-        android:layout_with="wrap_content"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/description" 
-        />
+        android:layout_below="@+id/description"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Add" />
 
 </RelativeLayout>

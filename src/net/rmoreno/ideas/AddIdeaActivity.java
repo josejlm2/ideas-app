@@ -18,7 +18,7 @@ public class AddIdeaActivity extends ActionBarActivity {
 	//EditText title = (EditText) findViewById(R.id.title);
 	EditText desc, title;
 	Button add;
-	
+		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -26,8 +26,8 @@ public class AddIdeaActivity extends ActionBarActivity {
 		
 		desc = (EditText) findViewById(R.id.description);
 		title = (EditText) findViewById(R.id.title);
-		add = (Button) findViewById(R.id.add_idea);
-		
+		add = (Button) findViewById(R.id.add);
+		System.out.print(add);
 		add.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -49,12 +49,10 @@ public class AddIdeaActivity extends ActionBarActivity {
 					idea.put("User", user);
 					idea.put("Title", titleString);
 					idea.put("Description", descString);
-				}
-				
+					idea.saveInBackground();
+				}				
 			}
-		});
-		
-		
+		});		
 	}
 
 	@Override
