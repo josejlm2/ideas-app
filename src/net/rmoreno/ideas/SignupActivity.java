@@ -64,10 +64,7 @@ public class SignupActivity extends ActionBarActivity {
 					AlertDialog dialog = builder.create();
 					dialog.show();
 				}
-				else{
-					
-					
-					
+				else{					
 					ParseUser user = new ParseUser();
 					user.setUsername(username);
 					user.setPassword(password);
