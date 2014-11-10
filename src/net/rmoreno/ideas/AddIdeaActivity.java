@@ -53,7 +53,7 @@ public class AddIdeaActivity extends ActionBarActivity {
 					idea.put("Title", title.getText().toString());
 					idea.put("Description", desc.getText().toString());
 					idea.saveInBackground(new SaveCallback() {
-						
+						//success or failure cases.
 						@Override
 						public void done(ParseException e) {
 							if(e == null){

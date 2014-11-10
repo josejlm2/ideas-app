@@ -1,16 +1,25 @@
 package net.rmoreno.ideas;
 
+import java.util.List;
+
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ListActivity {
 
+	List<ParseObject> mIdeas;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -24,6 +33,36 @@ public class MainActivity extends ActionBarActivity {
 		}else {
 			Log.i("USERNAME", currentUser.getUsername());
 		}
+		
+		
+	    
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		ParseQuery<ParseObject> query = ParseQuery.getQuery("Ideas");
+		query.setLimit(1000);
+		query.whereNotEqualTo("title", null);
+		query.findInBackground( new FindCallback<ParseObject>() {
+			
+			@Override
+			public void done(List<ParseObject> ideas, ParseException e) {
+				// TODO Auto-generated method stub
+				ideas = mIdeas;
+				
+				ParseObject[] idea = new ParseObject[mIdeas.size()];
+				
+				int i = 0;
+				for(ParseObject id : ideas){
+					idea[i] = id.getParseObject("title");
+					i++;
+				}
+				ArrayAdapter<ParseObject> adapter = new ArrayAdapter<ParseObject>(MainActivity.this, R.id.list_item, idea);
+				setListAdapter(adapter);
+			}
+		});
 	}
 
 	@Override
