@@ -1,5 +1,6 @@
 package net.rmoreno.ideas;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.app.ListActivity;
@@ -52,11 +53,12 @@ public class MainActivity extends ListActivity {
 				// TODO Auto-generated method stub
 				ideas = mIdeas;
 				
-				ParseObject[] idea = new ParseObject[mIdeas.size()];
+				ArrayList<ParseObject> idea = new ArrayList<ParseObject>();
 				
 				int i = 0;
 				for(ParseObject id : ideas){
-					idea[i] = id.getParseObject("title");
+					
+					idea.add(id.getParseObject("title"));
 					i++;
 				}
 				ArrayAdapter<ParseObject> adapter = new ArrayAdapter<ParseObject>(MainActivity.this, R.id.list_item, idea);
