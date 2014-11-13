@@ -54,10 +54,10 @@ public class MainActivity extends ListActivity {
 				ideas = mIdeas;
 				
 				ArrayList<ParseObject> idea = new ArrayList<ParseObject>();
-				
+				System.out.println(idea);
 				int i = 0;
 				for(ParseObject id : ideas){
-					
+					System.out.println(id.getParseObject("title"));
 					idea.add(id.getParseObject("title"));
 					i++;
 				}
