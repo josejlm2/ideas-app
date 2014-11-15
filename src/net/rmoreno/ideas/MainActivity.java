@@ -10,16 +10,18 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseQueryAdapter;
 import com.parse.ParseUser;
 
 public class MainActivity extends ListActivity {
-
-	List<ParseObject> mIdeas;
+	
+	ParseQueryAdapter<ParseObject> adapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,13 @@ public class MainActivity extends ListActivity {
 			startActivity(intent);
 		}else {
 			Log.i("USERNAME", currentUser.getUsername());
+			
+			  adapter = new ParseQueryAdapter<ParseObject>(this, "Ideas");
+			  adapter.setTextKey("title");
+			  adapter.setImageKey("description");
+			 
+			  ListView listView = (ListView) findViewById(android.R.id.list);
+			  listView.setAdapter(adapter);
 		}
 		
 		
@@ -43,28 +52,8 @@ public class MainActivity extends ListActivity {
 	protected void onResume() {
 		super.onResume();
 		
-		ParseQuery<ParseObject> query = ParseQuery.getQuery("Ideas");
-		query.setLimit(1000);
-		query.whereNotEqualTo("title", null);
-		query.findInBackground( new FindCallback<ParseObject>() {
-			
-			@Override
-			public void done(List<ParseObject> ideas, ParseException e) {
-				// TODO Auto-generated method stub
-				ideas = mIdeas;
-				
-				ArrayList<ParseObject> idea = new ArrayList<ParseObject>();
-				System.out.println(idea);
-				int i = 0;
-				for(ParseObject id : ideas){
-					System.out.println(id.getParseObject("title"));
-					idea.add(id.getParseObject("title"));
-					i++;
-				}
-				ArrayAdapter<ParseObject> adapter = new ArrayAdapter<ParseObject>(MainActivity.this, R.id.list_item, idea);
-				setListAdapter(adapter);
-			}
-		});
+		
+		
 	}
 
 	@Override
