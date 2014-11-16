@@ -7,16 +7,24 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
 
 public class CustomAdapter extends ParseQueryAdapter<ParseObject>{
 
 	
 
-	public CustomAdapter(Context context, String className) {
-		super(context, className);
-		// TODO Auto-generated constructor stub
+	public CustomAdapter(Context context) {
+		
+		super(context, new ParseQueryAdapter.QueryFactory<ParseObject>() {
+			public ParseQuery create() {
+				ParseQuery query = new ParseQuery("Ideas");
+				query.whereEqualTo("Title", "hello");
+				return query;
+			}
+		});
 	}
+
 
 	public View getItemView(ParseObject object, View v, ViewGroup parent) {
 		  if (v == null) {

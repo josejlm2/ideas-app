@@ -19,13 +19,14 @@ public class MainActivity extends Activity {
 	CustomAdapter customAdapter;
 	ListView listView;
 	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
 		ParseUser currentUser = ParseUser.getCurrentUser();
-		ParseObject = new ParseObject("Ideas");
+		
 		
 		if(currentUser == null){
 			Intent intent = new Intent(MainActivity.this, LoginActivity.class);
@@ -36,7 +37,7 @@ public class MainActivity extends Activity {
 			  mainAdapter = new ParseQueryAdapter<ParseObject>(this, "Ideas");
 			  mainAdapter.setTextKey("title");
 			  
-			  customAdapter = new CustomAdapter(MainActivity.this, object);
+			  customAdapter = new CustomAdapter(this);
 			  
 			  listView = (ListView) findViewById(android.R.id.list);
 			  listView.setAdapter(mainAdapter);
@@ -52,7 +53,13 @@ public class MainActivity extends Activity {
 	protected void onResume() {
 		super.onResume();
 		
-		
+		mainAdapter = new ParseQueryAdapter<ParseObject>(this, "Ideas");
+		  mainAdapter.setTextKey("Title");
+		  
+		  customAdapter = new CustomAdapter(this);
+		  
+		  listView = (ListView) findViewById(android.R.id.list);
+		  listView.setAdapter(mainAdapter);
 		
 	}
 
