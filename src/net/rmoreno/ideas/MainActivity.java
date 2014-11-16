@@ -1,27 +1,23 @@
 package net.rmoreno.ideas;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import android.app.ListActivity;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
-import com.parse.FindCallback;
-import com.parse.ParseException;
 import com.parse.ParseObject;
-import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
 import com.parse.ParseUser;
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends Activity {
 	
-	ParseQueryAdapter<ParseObject> adapter;
+	ParseQueryAdapter<ParseObject> mainAdapter;
+	CustomAdapter customAdapter;
+	ListView listView;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +25,7 @@ public class MainActivity extends ListActivity {
 		setContentView(R.layout.activity_main);
 		
 		ParseUser currentUser = ParseUser.getCurrentUser();
+		ParseObject = new ParseObject("Ideas");
 		
 		if(currentUser == null){
 			Intent intent = new Intent(MainActivity.this, LoginActivity.class);
@@ -36,17 +33,20 @@ public class MainActivity extends ListActivity {
 		}else {
 			Log.i("USERNAME", currentUser.getUsername());
 			
-			  adapter = new ParseQueryAdapter<ParseObject>(this, "Ideas");
-			  adapter.setTextKey("title");
-			  adapter.setImageKey("description");
-			 
-			  ListView listView = (ListView) findViewById(android.R.id.list);
-			  listView.setAdapter(adapter);
-		}
-		
-		
-	    
+			  mainAdapter = new ParseQueryAdapter<ParseObject>(this, "Ideas");
+			  mainAdapter.setTextKey("title");
+			  
+			  customAdapter = new CustomAdapter(MainActivity.this, object);
+			  
+			  listView = (ListView) findViewById(android.R.id.list);
+			  listView.setAdapter(mainAdapter);
+			  
+			  Toast.makeText(MainActivity.this, "adapter worked", Toast.LENGTH_LONG).show();
+		}	    
 	}
+	
+	
+	
 	
 	@Override
 	protected void onResume() {
