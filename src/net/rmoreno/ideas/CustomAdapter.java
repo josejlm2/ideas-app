@@ -20,6 +20,7 @@ public class CustomAdapter extends ParseQueryAdapter<ParseObject>{
 			public ParseQuery create() {
 				ParseQuery query = new ParseQuery("Ideas");
 				query.whereEqualTo("Title", "hello");
+				query.addDescendingOrder("Title");
 				return query;
 			}
 		});
@@ -39,8 +40,9 @@ public class CustomAdapter extends ParseQueryAdapter<ParseObject>{
 		 
 		  // Do additional configuration before returning the View.
 		  TextView descriptionView = (TextView) v.findViewById(R.id.title);
-		  ImageView icon = (ImageView) v.findViewById(R.drawable.ic_launcher);
+		  ImageView icon = (ImageView) v.findViewById(R.id.icon);
 		  descriptionView.setText(object.getString("title"));
+		  
 		  return v;
 		}
 }

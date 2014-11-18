@@ -1,11 +1,12 @@
 package net.rmoreno.ideas;
 
-import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -13,7 +14,7 @@ import com.parse.ParseObject;
 import com.parse.ParseQueryAdapter;
 import com.parse.ParseUser;
 
-public class MainActivity extends Activity {
+public class MainActivity extends ListActivity {
 	
 	ParseQueryAdapter<ParseObject> mainAdapter;
 	CustomAdapter customAdapter;
@@ -34,13 +35,13 @@ public class MainActivity extends Activity {
 		}else {
 			Log.i("USERNAME", currentUser.getUsername());
 			
-			  mainAdapter = new ParseQueryAdapter<ParseObject>(this, "Ideas");
-			  mainAdapter.setTextKey("title");
+			 // mainAdapter = new ParseQueryAdapter<ParseObject>(this, "Ideas");
+			  //mainAdapter.setTextKey("title");
 			  
-			  customAdapter = new CustomAdapter(this);
+			  //customAdapter = new CustomAdapter(this);
 			  
-			  listView = (ListView) findViewById(android.R.id.list);
-			  listView.setAdapter(mainAdapter);
+			 // listView = (ListView) findViewById(android.R.id.list);
+			  //listView.setAdapter(customAdapter);
 			  
 			  Toast.makeText(MainActivity.this, "adapter worked", Toast.LENGTH_LONG).show();
 		}	    
@@ -62,6 +63,15 @@ public class MainActivity extends Activity {
 		  listView.setAdapter(mainAdapter);
 		
 	}
+	
+	 @Override
+	    protected void onListItemClick(ListView l, View v, int position, long id) {
+
+	    //get selected items
+	    String selectedValue = (String) getListAdapter().getItem(position);
+	    Toast.makeText(this, selectedValue, Toast.LENGTH_SHORT).show();
+
+	    }
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
