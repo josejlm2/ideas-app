@@ -5,11 +5,18 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/net/rmoreno/ideas/CustomAdapter$1.class" afterPath="$PROJECT_DIR$/bin/classes/net/rmoreno/ideas/CustomAdapter$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/net/rmoreno/ideas/CustomAdapter.class" afterPath="$PROJECT_DIR$/bin/classes/net/rmoreno/ideas/CustomAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Ideas.apk" afterPath="$PROJECT_DIR$/bin/Ideas.apk" />
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/net/rmoreno/ideas/MainActivity.class" afterPath="$PROJECT_DIR$/bin/classes/net/rmoreno/ideas/MainActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes.dex" afterPath="$PROJECT_DIR$/bin/classes.dex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/resources.ap_" afterPath="$PROJECT_DIR$/bin/resources.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rmoreno/ideas/CustomAdapter.java" afterPath="$PROJECT_DIR$/src/net/rmoreno/ideas/CustomAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rmoreno/ideas/MainActivity.java" afterPath="$PROJECT_DIR$/src/net/rmoreno/ideas/MainActivity.java" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes.dex" afterPath="$PROJECT_DIR$/bin/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/resources.ap_" afterPath="$PROJECT_DIR$/bin/resources.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/rmoreno/ideas/CustomAdapter.java" afterPath="$PROJECT_DIR$/src/net/rmoreno/ideas/CustomAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/res/layout/activity_main.xml" />
+>>>>>>> bfd5458b03c5ff181b3c58c03a860b5f33d96563
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/item_list.xml" afterPath="$PROJECT_DIR$/res/layout/item_list.xml" />
     </list>
     <ignored path="Ideas.iws" />
@@ -36,8 +43,13 @@
       <file leaf-file-name="CustomAdapter.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/rmoreno/ideas/CustomAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.35581395" vertical-offset="0" max-vertical-offset="799">
               <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+=======
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
+              <caret line="0" column="26" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
+>>>>>>> bfd5458b03c5ff181b3c58c03a860b5f33d96563
               <folding />
             </state>
           </provider>
@@ -53,6 +65,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
@@ -60,6 +73,8 @@
       </list>
     </option>
   </component>
+=======
+>>>>>>> bfd5458b03c5ff181b3c58c03a860b5f33d96563
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
@@ -299,7 +314,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32823366" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32823366" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> bfd5458b03c5ff181b3c58c03a860b5f33d96563
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -340,8 +359,13 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/net/rmoreno/ideas/CustomAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.35581395" vertical-offset="0" max-vertical-offset="799">
           <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
+          <caret line="0" column="26" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
+>>>>>>> bfd5458b03c5ff181b3c58c03a860b5f33d96563
           <folding />
         </state>
       </provider>

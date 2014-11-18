@@ -22,6 +22,7 @@ public class CustomAdapter extends ParseQueryAdapter<ParseObject>{
 			public ParseQuery create() {
 				ParseQuery query = new ParseQuery("Ideas");
 				query.addAscendingOrder("Title");
+
 				return query;
 			}
 		});
@@ -42,6 +43,7 @@ public class CustomAdapter extends ParseQueryAdapter<ParseObject>{
 		 
 		  // Do additional configuration before returning the View.
 		  TextView descriptionView = (TextView) v.findViewById(R.id.title);
+
 		  ImageView icon = (ImageView) v.findViewById(R.id.image);
 		  descriptionView.setText(object.getString("Title"));
 		  
@@ -49,6 +51,7 @@ public class CustomAdapter extends ParseQueryAdapter<ParseObject>{
 			      "Roboto-Bold.ttf");
 			      descriptionView.setTypeface(robotoBold);
 		  
+
 		  
 		  return v;
 		}
