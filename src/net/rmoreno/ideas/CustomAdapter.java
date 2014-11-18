@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
+import com.parse.ParseUser;
 
 public class CustomAdapter extends ParseQueryAdapter<ParseObject>{
 
@@ -21,7 +22,8 @@ public class CustomAdapter extends ParseQueryAdapter<ParseObject>{
 		super(context, new ParseQueryAdapter.QueryFactory<ParseObject>() {
 			public ParseQuery create() {
 				ParseQuery query = new ParseQuery("Ideas");
-				query.addAscendingOrder("Title");
+				query.addDescendingOrder("Title");
+				query.whereEqualTo("User", ParseUser.getCurrentUser().getUsername());
 
 				return query;
 			}
@@ -43,8 +45,8 @@ public class CustomAdapter extends ParseQueryAdapter<ParseObject>{
 		 
 		  // Do additional configuration before returning the View.
 		  TextView descriptionView = (TextView) v.findViewById(R.id.title);
-
 		  ImageView icon = (ImageView) v.findViewById(R.id.image);
+		  
 		  descriptionView.setText(object.getString("Title"));
 		  
 		  Typeface robotoBold = Typeface.createFromAsset(mContext.getAssets(),

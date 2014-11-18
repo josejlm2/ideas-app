@@ -41,6 +41,7 @@ public class AddIdeaActivity extends ActionBarActivity {
 
 			@Override
 			public void onClick(View v) {
+				setProgressBarIndeterminate(true);
 				//check and see all info filled
 				if(desc.getText().toString().matches("")|| title.getText().toString().matches("")){
 					Toast.makeText(AddIdeaActivity.this, "Fill in Empty Forms", Toast.LENGTH_SHORT).show();					
@@ -57,6 +58,7 @@ public class AddIdeaActivity extends ActionBarActivity {
 						@Override
 						public void done(ParseException e) {
 							if(e == null){
+								setProgressBarIndeterminate(false);
 								AlertDialog.Builder builder = new AlertDialog.Builder(AddIdeaActivity.this);
 								builder.setMessage("Idea Saved")
 									.setPositiveButton("Ok", new OnClickListener() {
@@ -74,6 +76,7 @@ public class AddIdeaActivity extends ActionBarActivity {
 								
 							}// end e == null if
 							else{
+								setProgressBarIndeterminate(false);
 								AlertDialog.Builder builder = new AlertDialog.Builder(AddIdeaActivity.this);
 								builder.setMessage(e.getMessage())
 									.setPositiveButton("Ok", null)
