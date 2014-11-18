@@ -2,12 +2,14 @@ package net.rmoreno.ideas;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.parse.ParseObject;
 import com.parse.ParseQueryAdapter;
@@ -18,6 +20,8 @@ public class MainActivity extends Activity {
 	ParseQueryAdapter<ParseObject> mainAdapter;
 	CustomAdapter customAdapter;
 	ListView listView;
+	TextView ideaTitle;
+	ImageView icon;
 	
 	
 	@Override
@@ -25,6 +29,11 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+		ideaTitle = (TextView) findViewById(R.id.title);
+		icon = (ImageView) findViewById(R.id.icon);
+		
+		
+			      
 		ParseUser currentUser = ParseUser.getCurrentUser();
 		
 		
@@ -34,15 +43,15 @@ public class MainActivity extends Activity {
 		}else {
 			Log.i("USERNAME", currentUser.getUsername());
 			
-			  mainAdapter = new ParseQueryAdapter<ParseObject>(this, "Ideas");
-			  mainAdapter.setTextKey("title");
+			  
 			  
 			  customAdapter = new CustomAdapter(this);
 			  
 			  listView = (ListView) findViewById(android.R.id.list);
-			  listView.setAdapter(mainAdapter);
+			  listView.setAdapter(customAdapter);
 			  
-			  Toast.makeText(MainActivity.this, "adapter worked", Toast.LENGTH_LONG).show();
+			  
+			  
 		}	    
 	}
 	
@@ -53,13 +62,7 @@ public class MainActivity extends Activity {
 	protected void onResume() {
 		super.onResume();
 		
-		mainAdapter = new ParseQueryAdapter<ParseObject>(this, "Ideas");
-		  mainAdapter.setTextKey("Title");
-		  
-		  customAdapter = new CustomAdapter(this);
-		  
-		  listView = (ListView) findViewById(android.R.id.list);
-		  listView.setAdapter(mainAdapter);
+		
 		
 	}
 

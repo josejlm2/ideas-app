@@ -1,6 +1,8 @@
 package net.rmoreno.ideas;
 
 import android.content.Context;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -12,17 +14,18 @@ import com.parse.ParseQueryAdapter;
 
 public class CustomAdapter extends ParseQueryAdapter<ParseObject>{
 
+	Context mContext;
 	
-
 	public CustomAdapter(Context context) {
 		
 		super(context, new ParseQueryAdapter.QueryFactory<ParseObject>() {
 			public ParseQuery create() {
 				ParseQuery query = new ParseQuery("Ideas");
-				query.whereEqualTo("Title", "hello");
+				query.addAscendingOrder("Title");
 				return query;
 			}
 		});
+		mContext = context;
 	}
 
 
@@ -39,8 +42,14 @@ public class CustomAdapter extends ParseQueryAdapter<ParseObject>{
 		 
 		  // Do additional configuration before returning the View.
 		  TextView descriptionView = (TextView) v.findViewById(R.id.title);
-		  ImageView icon = (ImageView) v.findViewById(R.drawable.ic_launcher);
-		  descriptionView.setText(object.getString("title"));
+		  ImageView icon = (ImageView) v.findViewById(R.id.image);
+		  descriptionView.setText(object.getString("Title"));
+		  
+		  Typeface robotoBold = Typeface.createFromAsset(mContext.getAssets(),
+			      "Roboto-Bold.ttf");
+			      descriptionView.setTypeface(robotoBold);
+		  
+		  
 		  return v;
 		}
 }
