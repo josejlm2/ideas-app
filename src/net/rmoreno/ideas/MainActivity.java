@@ -35,13 +35,13 @@ public class MainActivity extends ListActivity {
 		}else {
 			Log.i("USERNAME", currentUser.getUsername());
 			
-			 // mainAdapter = new ParseQueryAdapter<ParseObject>(this, "Ideas");
-			  //mainAdapter.setTextKey("title");
+			 	mainAdapter = new ParseQueryAdapter<ParseObject>(this, "Ideas");
+			 	mainAdapter.setTextKey("Title");
 			  
-			  //customAdapter = new CustomAdapter(this);
+			 	customAdapter = new CustomAdapter(this);
 			  
-			 // listView = (ListView) findViewById(android.R.id.list);
-			  //listView.setAdapter(customAdapter);
+			 	listView = (ListView) findViewById(android.R.id.list);
+			 	listView.setAdapter(customAdapter);
 			  
 			  Toast.makeText(MainActivity.this, "adapter worked", Toast.LENGTH_LONG).show();
 		}	    
@@ -54,13 +54,7 @@ public class MainActivity extends ListActivity {
 	protected void onResume() {
 		super.onResume();
 		
-		mainAdapter = new ParseQueryAdapter<ParseObject>(this, "Ideas");
-		  mainAdapter.setTextKey("Title");
-		  
-		  customAdapter = new CustomAdapter(this);
-		  
-		  listView = (ListView) findViewById(android.R.id.list);
-		  listView.setAdapter(mainAdapter);
+		
 		
 	}
 	
